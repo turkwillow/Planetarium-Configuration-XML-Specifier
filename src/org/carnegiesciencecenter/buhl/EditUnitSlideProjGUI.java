@@ -28,6 +28,11 @@ public class EditUnitSlideProjGUI extends JDialog implements ActionListener, Foc
 	private EditBankGUI parentWindow;
 	private UnitSlideProjector toBeEdited;
 	private String toBeEditedName;	// Since the name may change
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
 
 	/**
 	 * Launch the application.
@@ -88,7 +93,7 @@ public class EditUnitSlideProjGUI extends JDialog implements ActionListener, Foc
 		parentWindow = parent;
 		setTitle("Slide Projector Units");
 		
-		setBounds(100, 100, 230, 286);
+		setBounds(100, 100, 270, 286);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -161,6 +166,26 @@ public class EditUnitSlideProjGUI extends JDialog implements ActionListener, Foc
 		textFieldHeight.addFocusListener(this);
 		contentPanel.add(textFieldHeight);
 		textFieldHeight.setColumns(10);
+		
+		label = new JLabel("degrees");
+		label.setBounds(181, 61, 70, 14);
+		contentPanel.add(label);
+		
+		label_1 = new JLabel("degrees");
+		label_1.setBounds(181, 88, 70, 14);
+		contentPanel.add(label_1);
+		
+		label_2 = new JLabel("degrees");
+		label_2.setBounds(181, 115, 70, 14);
+		contentPanel.add(label_2);
+		
+		label_3 = new JLabel("degrees");
+		label_3.setBounds(181, 142, 70, 14);
+		contentPanel.add(label_3);
+		
+		label_4 = new JLabel("degrees");
+		label_4.setBounds(181, 169, 70, 14);
+		contentPanel.add(label_4);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

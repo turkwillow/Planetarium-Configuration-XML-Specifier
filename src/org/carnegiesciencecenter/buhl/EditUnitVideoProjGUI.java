@@ -88,7 +88,7 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		parentWindow = parent;
 		setTitle("Video Projector Units");
 		
-		setBounds(100, 100, 230, 286);
+		setBounds(100, 100, 270, 286);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -161,6 +161,26 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		textFieldHeight.addFocusListener(this);
 		contentPanel.add(textFieldHeight);
 		textFieldHeight.setColumns(10);
+		
+		JLabel lblDegrees = new JLabel("degrees");
+		lblDegrees.setBounds(181, 61, 70, 14);
+		contentPanel.add(lblDegrees);
+		
+		JLabel label = new JLabel("degrees");
+		label.setBounds(181, 88, 70, 14);
+		contentPanel.add(label);
+		
+		JLabel label_1 = new JLabel("degrees");
+		label_1.setBounds(181, 115, 70, 14);
+		contentPanel.add(label_1);
+		
+		JLabel label_2 = new JLabel("degrees");
+		label_2.setBounds(181, 142, 70, 14);
+		contentPanel.add(label_2);
+		
+		JLabel label_3 = new JLabel("degrees");
+		label_3.setBounds(181, 169, 70, 14);
+		contentPanel.add(label_3);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
