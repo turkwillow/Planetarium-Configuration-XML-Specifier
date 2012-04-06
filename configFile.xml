@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<planetarium>
+  <bank name="SPFX" action="keepmost" />
+  <bank name="SONY" action="keepmost" />
+  <bank name="DMX" action="keepmost" />
+  <bank name="PANS" action="keepmost" />
+  <bank name="SRC2" action="keepmost" />
+  <bank name="VPRJ" action="keepmost" />
+  <bank name="PROJ" action="keepmost" />
+  <bank name="AMIX" action="keepmost">
+    <command name="Dissolve" action="discard" />
+  </bank>
+  <bank name="SLEW" action="keepmost" />
+  <bank name="LAMP" action="keepmost" />
+  <bank name="VSRC" action="keepmost" />
+  <bank name="DSKY" action="keepmost" />
+  <bank name="ANIM" action="keepmost">
+    <command name="Dissolve" action="discard" />
+    <unit name="D" azimuth="1.0" elevation="2.0" height="5.0" rotation="3.0" width="4.0" />
+    <unit name="C" azimuth="1.0" elevation="2.0" height="5.0" rotation="3.0" width="4.0" />
+  </bank>
+  <bank name="RELY" action="keepmost" />
+  <bank name="ASKY" action="keepmost" />
+  <bank name="MISC" action="keepmost" />
+  <bank name="MOTR" action="keepmost" />
+  <bank name="VOLM" action="keepmost" />
+</planetarium>
