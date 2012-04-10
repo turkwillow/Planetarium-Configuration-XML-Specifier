@@ -26,7 +26,7 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 						textFieldHeight;
 	private JComboBox comboBoxUnitName;
 	private EditBankGUI parentWindow;
-	private UnitVideoProjector toBeEdited;
+	private UnitVideoProjector toBeEdited;	// If we got here from an Edit button, the Unit to edit
 	private String toBeEditedName;	// Since the name may change
 
 	/**
@@ -44,6 +44,7 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 
 	/**
 	 * Create the dialog.
+	 * @param parent	The window that requested this one be created
 	 * @wbp.parser.constructor
 	 */
 	public EditUnitVideoProjGUI(EditBankGUI parent)
@@ -52,6 +53,11 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		toBeEdited = null;
 	}
 	
+	/**
+	 * Create the dialog, supplying it with a Unit to start with and edit.
+	 * @param parent	The window that request this one be created
+	 * @param toEdit	The Unit to edit
+	 */
 	public EditUnitVideoProjGUI(EditBankGUI parent, Unit toEdit)
 	{
 		initialize(parent);
@@ -83,6 +89,10 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		}
 	}
 	
+	/**
+	 * Initializes the GUI.
+	 * @param parent	The Window that created this one
+	 */
 	private void initialize(EditBankGUI parent)
 	{
 		parentWindow = parent;
@@ -210,28 +220,6 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		this.setVisible(false);
 	}
 	
-	/**
-	 * Converts a String to a double
-	 * @param sNum  The String containing the double
-	 * @return	The double if possible, or Double.MAX_VALUE otherwise
-	 */
-	public static double StringToDouble(String sNum)
-	{
-		sNum = sNum.trim();
-		if (sNum.length() == 0)
-			return Double.MAX_VALUE;
-
-		try
-		{
-			double num = Double.parseDouble(sNum);
-			return num;
-		}
-		catch (NumberFormatException e)
-		{
-			return Double.MAX_VALUE;
-		}
-	}
-	
 	public void actionPerformed(ActionEvent e) 
 	{
 		if (e.getSource() == cancelButton)
@@ -240,11 +228,11 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		{
 			String name = (String) comboBoxUnitName.getSelectedItem();
 			
-			double azimuth = StringToDouble(textFieldAzimuth.getText());
-			double elevation = StringToDouble(textFieldElevation.getText());
-			double rotation = StringToDouble(textFieldRotation.getText());
-			double width = StringToDouble(textFieldWidth.getText());
-			double height = StringToDouble(textFieldHeight.getText());
+			double azimuth = Utility.stringToDouble(textFieldAzimuth.getText());
+			double elevation = Utility.stringToDouble(textFieldElevation.getText());
+			double rotation = Utility.stringToDouble(textFieldRotation.getText());
+			double width = Utility.stringToDouble(textFieldWidth.getText());
+			double height = Utility.stringToDouble(textFieldHeight.getText());
 			
 			if (   azimuth 		== Double.MAX_VALUE
 				|| elevation 	== Double.MAX_VALUE

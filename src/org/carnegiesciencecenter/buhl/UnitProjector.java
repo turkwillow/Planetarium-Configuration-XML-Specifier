@@ -5,12 +5,24 @@ import org.jdom.Element;
 public class UnitProjector extends Unit
 {
 	private double azimuth, elevation, rotation, width, height;
+	// Used to refer to XML elements:
 	public static final String AZIMUTH 		= "azimuth";
 	public static final String ELEVATION	= "elevation";
 	public static final String ROTATION 	= "rotation";
 	public static final String WIDTH 		= "width";
 	public static final String HEIGHT 		= "height";
 	
+	/**
+	 * Constructor taking the name and type of projector as Strings
+	 * and the rest of the values as doubles
+	 * @param Name		The name of the projector
+	 * @param Azimuth	The azimuth of the projector (degrees)
+	 * @param Elevation	The Elevation of the projector (degrees)
+	 * @param Rotation	The Rotation of the projector (degrees)
+	 * @param Width		The Width of the projector (degrees)
+	 * @param Height	The Height of the projector (degrees)
+	 * @param projType	The type of the projector (e.g, "Slide Projector")
+	 */
 	public UnitProjector(String Name, double Azimuth, double Elevation, double Rotation, double Width, double Height, String projType)
 	{
 		super(Name, projType);
@@ -21,14 +33,25 @@ public class UnitProjector extends Unit
 		height = Height;
 	}
 	
+	/**
+	 * Constructor taking the name and type of projector as Strings
+	 * and the rest of the values as Strings as well
+	 * @param Name		The name of the projector
+	 * @param Azimuth	The azimuth of the projector (degrees)
+	 * @param Elevation	The Elevation of the projector (degrees)
+	 * @param Rotation	The Rotation of the projector (degrees)
+	 * @param Width		The Width of the projector (degrees)
+	 * @param Height	The Height of the projector (degrees)
+	 * @param projType	The type of the projector (e.g, "Slide Projector")
+	 */
 	public UnitProjector(String Name, String Azimuth, String Elevation, String Rotation, String Width, String Height, String projType)
 	{
 		super(Name, projType);
-		azimuth 	= maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(Azimuth));
-		elevation 	= maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(Elevation));
-		rotation 	= maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(Rotation));
-		width 		= maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(Width));
-		height 		= maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(Height));
+		azimuth 	= Utility.maxToZeroOrOriginal(Utility.stringToDouble(Azimuth));
+		elevation 	= Utility.maxToZeroOrOriginal(Utility.stringToDouble(Elevation));
+		rotation 	= Utility.maxToZeroOrOriginal(Utility.stringToDouble(Rotation));
+		width 		= Utility.maxToZeroOrOriginal(Utility.stringToDouble(Width));
+		height 		= Utility.maxToZeroOrOriginal(Utility.stringToDouble(Height));
 	}
 	
 	public double getAzimuth()

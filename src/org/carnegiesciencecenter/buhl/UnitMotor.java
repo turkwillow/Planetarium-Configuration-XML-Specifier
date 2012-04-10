@@ -7,6 +7,7 @@ public class UnitMotor extends Unit
 	private double minWidth, maxWidth;
 	private double minHeight, maxHeight;
 	private double minPosition, maxPosition;
+	// For referring to things in XML:
 	public static final String MOTOR = "Motor";
 	public static final String MIN_WIDTH	= "minwidth";
 	public static final String MAX_WIDTH	= "maxwidth";
@@ -15,6 +16,17 @@ public class UnitMotor extends Unit
 	public static final String MIN_POS		= "minpos";
 	public static final String MAX_POS		= "maxpos";
 	
+	/**
+	 * Public constructor taking the motor's name as a String and 
+	 * other values as doubles.
+	 * @param Name		The name of the motor
+	 * @param MinWidth	The minimum width of the motor, in degrees
+	 * @param MaxWidth	The maximum width of the motor, in degrees
+	 * @param MinHeight	The minimum height of the motor, in degrees
+	 * @param MaxHeight	The maximum height of the motor, in degrees
+	 * @param MinPos	The minimum position of the motor
+	 * @param MaxPos	The maximum position of the motor
+	 */
 	public UnitMotor(String Name, 
 					double MinWidth, double MaxWidth, 
 					double MinHeight, double MaxHeight, 
@@ -30,6 +42,17 @@ public class UnitMotor extends Unit
 		setMaxPos(MaxPos);
 	}
 	
+	/**
+	 * Public constructor taking the motor's name as a String and 
+	 * other values as Strings as well.
+	 * @param Name		The name of the motor
+	 * @param MinWidth	The minimum width of the motor, in degrees
+	 * @param MaxWidth	The maximum width of the motor, in degrees
+	 * @param MinHeight	The minimum height of the motor, in degrees
+	 * @param MaxHeight	The maximum height of the motor, in degrees
+	 * @param MinPos	The minimum position of the motor
+	 * @param MaxPos	The maximum position of the motor
+	 */
 	public UnitMotor(String Name, 
 			String MinWidth, String MaxWidth, 
 			String MinHeight, String MaxHeight, 
@@ -37,12 +60,12 @@ public class UnitMotor extends Unit
 	{
 		super(Name, MOTOR);
 		
-		setMinWidth(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MinWidth)));
-		setMaxWidth(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MaxWidth)));
-		setMinHeight(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MinHeight)));
-		setMaxHeight(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MaxHeight)));
-		setMinPos(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MinPos)));
-		setMaxPos(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MaxPos)));
+		setMinWidth(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MinWidth)));
+		setMaxWidth(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MaxWidth)));
+		setMinHeight(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MinHeight)));
+		setMaxHeight(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MaxHeight)));
+		setMinPos(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MinPos)));
+		setMaxPos(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MaxPos)));
 	}
 	
 	public void setMinWidth(double MinWidth)

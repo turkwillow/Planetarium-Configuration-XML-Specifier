@@ -25,8 +25,7 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 	private JComboBox comboBoxUnitName;
 	private JButton okButton, cancelButton;
 	private JTextField 	textFieldMinWidth, textFieldMaxWidth, 
-						textFieldMinHeight, textFieldMaxHeight, 
-						textFieldMinPos, textFieldMaxPos;
+						textFieldMinHeight, textFieldMaxHeight;
 	private UnitMotor toBeEdited;
 	private String toBeEditedName;	// The original name of the unit to be edited
 	private JLabel lblDegrees;
@@ -49,6 +48,7 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 
 	/**
 	 * Create the dialog.
+	 * @param parent	The window that requested this one be created
 	 * @wbp.parser.constructor
 	 */
 	public EditUnitMotorGUI(EditBankGUI parent) 
@@ -57,6 +57,11 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 		toBeEdited = null;
 	}
 	
+	/**
+	 * Create the dialog, supplying it with a Unit to start with and edit.
+	 * @param parent	The window that request this one be created
+	 * @param toEdit	The Unit to edit
+	 */
 	public EditUnitMotorGUI(EditBankGUI parent, Unit toEdit)
 	{
 		initialize(parent);;
@@ -84,17 +89,19 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 			textFieldMaxWidth.setText(String.valueOf(toBeEdited.getMaxWidth()));
 			textFieldMinHeight.setText(String.valueOf(toBeEdited.getMinHeight()));
 			textFieldMaxHeight.setText(String.valueOf(toBeEdited.getMaxHeight()));
-			textFieldMinPos.setText(String.valueOf(toBeEdited.getMinPos()));
-			textFieldMaxPos.setText(String.valueOf(toBeEdited.getMaxPos()));
 		}
 	}
 	
+	/**
+	 * Initializes the GUI.
+	 * @param parent	The Window that created this one
+	 */
 	private void initialize(EditBankGUI parent)
 	{
 		parentWindow = parent;
 		
 		setTitle("Motor Units");
-		setBounds(100, 100, 300, 300);
+		setBounds(100, 100, 300, 240);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -166,32 +173,6 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 			contentPanel.add(textFieldMaxHeight);
 		}
 		{
-			JLabel label = new JLabel("Minimum Position");
-			label.setBounds(10, 162, 135, 14);
-			contentPanel.add(label);
-		}
-		{
-			JLabel label = new JLabel("Maximum Position");
-			label.setBounds(10, 187, 135, 14);
-			contentPanel.add(label);
-		}
-		{
-			textFieldMinPos = new JTextField();
-			textFieldMinPos.setText("0.0");
-			textFieldMinPos.setColumns(10);
-			textFieldMinPos.setBounds(151, 159, 63, 20);
-			textFieldMinPos.addFocusListener(this);
-			contentPanel.add(textFieldMinPos);
-		}
-		{
-			textFieldMaxPos = new JTextField();
-			textFieldMaxPos.setText("0.0");
-			textFieldMaxPos.setColumns(10);
-			textFieldMaxPos.setBounds(151, 184, 63, 20);
-			textFieldMaxPos.addFocusListener(this);
-			contentPanel.add(textFieldMaxPos);
-		}
-		{
 			lblDegrees = new JLabel("degrees");
 			lblDegrees.setBounds(224, 59, 60, 14);
 			contentPanel.add(lblDegrees);
@@ -249,13 +230,13 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 		{
 			String name = (String) comboBoxUnitName.getSelectedItem();
 			
-			// textFieldMinWidth, textFieldMaxWidth, textFieldMinHeight, textFieldMaxHeight, textFieldMinPos, textFieldMaxPos;
-			double minWid = EditUnitSlideProjGUI.StringToDouble(textFieldMinWidth.getText());
-			double maxWid = EditUnitSlideProjGUI.StringToDouble(textFieldMaxWidth.getText());
-			double minHgt = EditUnitSlideProjGUI.StringToDouble(textFieldMinHeight.getText());
-			double maxHgt = EditUnitSlideProjGUI.StringToDouble(textFieldMaxHeight.getText());
-			double minPos = EditUnitSlideProjGUI.StringToDouble(textFieldMinPos.getText());
-			double maxPos = EditUnitSlideProjGUI.StringToDouble(textFieldMaxPos.getText());
+			double minWid = Utility.stringToDouble(textFieldMinWidth.getText());
+			double maxWid = Utility.stringToDouble(textFieldMaxWidth.getText());
+			double minHgt = Utility.stringToDouble(textFieldMinHeight.getText());
+			double maxHgt = Utility.stringToDouble(textFieldMaxHeight.getText());
+			//double minPos = Utility.stringToDouble(textFieldMinPos.getText());
+			//double maxPos = Utility.stringToDouble(textFieldMaxPos.getText());
+			double minPos = 0.0, maxPos = 0.0;	// Currently not using min/max position
 			
 			if (   minWid 	== Double.MAX_VALUE
 				|| maxWid 	== Double.MAX_VALUE

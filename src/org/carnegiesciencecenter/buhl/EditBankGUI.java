@@ -125,6 +125,10 @@ public class EditBankGUI extends JDialog implements ActionListener
 		refreshUnitList();
 	}
 	
+	/**
+	 * Initializes the GUI.
+	 * @param parentWin	The Window that created this one
+	 */
 	private void initialize(EditConfigMainGUI parentWin)
 	{
 		parentWindow = parentWin;	// Set the parent window

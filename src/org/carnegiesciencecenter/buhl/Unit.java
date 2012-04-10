@@ -4,17 +4,28 @@ import org.jdom.Element;
 
 public class Unit implements Comparable
 {
-	protected String name;
-	protected String deviceType;
+	protected String name;	// The name of the Unit (e.g., "E")
+	protected String deviceType;	// The type of device (e.g., "Video Projector")
+	// For referring to things in XML:
 	public static final String NAME = "name";
 	public static final String OTHER = "Other";
 	
+	/**
+	 * Public constructor, taking the Unit's name and device type
+	 * @param Name		The name of the Unit (e.g., "E")
+	 * @param devType	The type of device (e.g., "Video Projector")
+	 */
 	public Unit(String Name, String devType)
 	{
 		name = Name;
 		setDeviceType(devType);
 	}
 	
+	/**
+	 * Public constructor, taking the Unit's name
+	 * and assigning the device type a default value of "Other"
+	 * @param Name	The name of the Unit (e.g., "E")
+	 */
 	public Unit(String Name)
 	{
 		name = Name;
@@ -39,24 +50,6 @@ public class Unit implements Comparable
 	public String getDeviceType()
 	{
 		return deviceType;
-	}
-	
-	/**
-	 * If the given number equals Double.MAX_VALUE, returns zero.
-	 * Otherwise, the original number is returned.
-	 * (Purpose of this function is to turn an unusable error value
-	 *  into something practical, rather than just showing the user
-	 *  something nasty)
-	 * @param num	The number to check
-	 * @return	The original number given if it does not equal Double.MAX_VALUE,
-	 * 			0.0 otherwise
-	 */
-	protected double maxToZeroOrOriginal(double num)
-	{
-		if (num == Double.MAX_VALUE)
-			return 0.0;
-		else
-			return num;
 	}
 	
 	/**

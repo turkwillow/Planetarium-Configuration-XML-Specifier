@@ -11,6 +11,12 @@ public class SpiceCommand
 	private String name;
 	private CommandAction action;
 	
+	/**
+	 * Public constructor for SpiceCommand
+	 * @param cmdName	The name of the command (e.g., "Dissolve")
+	 * @param cmdAction	The action to be taken when the conversion 
+	 * 					process encounters this command
+	 */
 	public SpiceCommand(String cmdName, CommandAction cmdAction)
 	{
 		name = cmdName;

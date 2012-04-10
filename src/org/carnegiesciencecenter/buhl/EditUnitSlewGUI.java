@@ -42,6 +42,7 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 
 	/**
 	 * Create the dialog.
+	 * @param parent	The window that requested this one be created
 	 * @wbp.parser.constructor
 	 */
 	public EditUnitSlewGUI(EditBankGUI parent) 
@@ -50,6 +51,11 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 		toBeEdited = null;
 	}
 	
+	/**
+	 * Create the dialog, supplying it with a Unit to start with and edit.
+	 * @param parent	The window that request this one be created
+	 * @param toEdit	The Unit to edit
+	 */
 	public EditUnitSlewGUI(EditBankGUI parent, Unit toEdit)
 	{
 		initialize(parent);
@@ -82,6 +88,10 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 		}
 	}
 	
+	/**
+	 * Initializes the GUI.
+	 * @param parent	The Window that created this one
+	 */
 	private void initialize(EditBankGUI parent)
 	{
 		parentWindow = parent;
@@ -209,11 +219,11 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 		{
 			String name = (String) comboBoxUnitName.getSelectedItem();
 			
-			double minPos = EditUnitSlideProjGUI.StringToDouble(textFieldMinPos.getText());
-			double maxPos = EditUnitSlideProjGUI.StringToDouble(textFieldMaxPos.getText());
-			double minVal = EditUnitSlideProjGUI.StringToDouble(textFieldMinVal.getText());
-			double maxVal = EditUnitSlideProjGUI.StringToDouble(textFieldMaxVal.getText());
-			double tripTm = EditUnitSlideProjGUI.StringToDouble(textFieldTripTime.getText());
+			double minPos = Utility.stringToDouble(textFieldMinPos.getText());
+			double maxPos = Utility.stringToDouble(textFieldMaxPos.getText());
+			double minVal = Utility.stringToDouble(textFieldMinVal.getText());
+			double maxVal = Utility.stringToDouble(textFieldMaxVal.getText());
+			double tripTm = Utility.stringToDouble(textFieldTripTime.getText());
 			
 			if (   minPos == Double.MAX_VALUE
 				|| maxPos == Double.MAX_VALUE

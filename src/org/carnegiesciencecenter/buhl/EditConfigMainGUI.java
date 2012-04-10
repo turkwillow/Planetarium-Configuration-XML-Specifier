@@ -53,7 +53,8 @@ import java.util.regex.Pattern;
 
 public class EditConfigMainGUI implements ActionListener
 {
-	public static final String FILE_EXTENSION = "xml";	// XML file
+	public static final String FILE_EXTENSION   = "xml"; // XML file extension
+	public static final String IMPORT_EXTENSION = "ini"; // Extension for imported settings files
 	private String filename = "configFile";
 	private JFrame frmSpiceDeviceConfiguration;
 	private JList list;
@@ -354,6 +355,10 @@ public class EditConfigMainGUI implements ActionListener
 		frmSpiceDeviceConfiguration.setVisible(false);
 	}
 	
+	/**
+	 * Opens an XML file representing the Planetarium's configuration
+	 * @param file An XML file representing the Planetarium's configuration
+	 */
 	private void openXMLConfigFile(File file)
 	{
 		SAXBuilder builder = new SAXBuilder();

@@ -7,6 +7,7 @@ public class UnitSlew extends Unit
 	private double 	minPosition, maxPosition, 
 					minValue, maxValue, 
 					tripTime;
+	// Used to refer to XML elements:
 	public static final String SLEW = "Slew";
 	public static final String MIN_POS = "minpos";
 	public static final String MAX_POS = "maxpos";
@@ -14,6 +15,16 @@ public class UnitSlew extends Unit
 	public static final String MAX_VAL = "maxval";
 	public static final String TRIP_TIME = "triptime";
 	
+	/**
+	 * Public constructor taking the name of the slew (e.g., "SLEW") as a String
+	 * and other values as doubles.
+	 * @param name		The name of the slew (e.g., "SLEW")
+	 * @param MinPos	The minimum position of the slew (degrees)
+	 * @param MaxPos	The maximum position of the slew (degrees)
+	 * @param MinValue	The minimum value of the slew (no units)
+	 * @param MaxValue	The maximum value of the slew (no units)
+	 * @param TripTime	The trip time of the slew (hudredths of a second)
+	 */
 	public UnitSlew(String name, double MinPos, double MaxPos, double MinValue, double MaxValue, double TripTime)
 	{
 		super(name, SLEW);
@@ -25,15 +36,25 @@ public class UnitSlew extends Unit
 		setTripTime(TripTime);
 	}
 	
+	/**
+	 * Public constructor taking the name of the slew (e.g., "SLEW") as a String
+	 * and other values as Strings as well.
+	 * @param name		The name of the slew (e.g., "SLEW")
+	 * @param MinPos	The minimum position of the slew (degrees)
+	 * @param MaxPos	The maximum position of the slew (degrees)
+	 * @param MinValue	The minimum value of the slew (no units)
+	 * @param MaxValue	The maximum value of the slew (no units)
+	 * @param TripTime	The trip time of the slew (hudredths of a second)
+	 */
 	public UnitSlew(String name, String MinPos, String MaxPos, String MinValue, String MaxValue, String TripTime)
 	{
 		super(name, SLEW);
 		
-		setMinPos(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MinPos)));
-		setMaxPos(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MaxPos)));
-		setMinValue(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MinValue)));
-		setMaxValue(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(MaxValue)));
-		setTripTime(maxToZeroOrOriginal(EditUnitSlideProjGUI.StringToDouble(TripTime)));
+		setMinPos(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MinPos)));
+		setMaxPos(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MaxPos)));
+		setMinValue(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MinValue)));
+		setMaxValue(Utility.maxToZeroOrOriginal(Utility.stringToDouble(MaxValue)));
+		setTripTime(Utility.maxToZeroOrOriginal(Utility.stringToDouble(TripTime)));
 	}
 	
 	public void setMinPos(double minPos)

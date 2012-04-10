@@ -47,6 +47,7 @@ public class EditCommandGUI extends JDialog implements ActionListener {
 
 	/**
 	 * Create the dialog.
+	 * @param parent	The window that requested this one be created
 	 * @wbp.parser.constructor
 	 */
 	public EditCommandGUI(EditBankGUI parentWin) 
@@ -57,6 +58,11 @@ public class EditCommandGUI extends JDialog implements ActionListener {
 		toBeEdited = null;
 	}
 	
+	/**
+	 * Create the dialog, supplying it with a Unit to start with and edit.
+	 * @param parent	The window that request this one be created
+	 * @param toEdit	The Unit to edit
+	 */
 	public EditCommandGUI(EditBankGUI parentWin, SpiceCommand toEdit) 
 	{
 		initialize(parentWin);
@@ -89,6 +95,10 @@ public class EditCommandGUI extends JDialog implements ActionListener {
 		}
 	}
 	
+	/**
+	 * Initializes the GUI.
+	 * @param parent	The Window that created this one
+	 */
 	private void initialize(EditBankGUI parentWin)
 	{
 		parentWindow = parentWin;	// Set the window's parent
@@ -148,7 +158,10 @@ public class EditCommandGUI extends JDialog implements ActionListener {
 			}
 		}
 	}
-	
+
+	/**
+	 * Closes the window.
+	 */
 	private void closeWindow()
 	{
 		this.dispose();
