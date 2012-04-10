@@ -87,7 +87,7 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 		parentWindow = parent;
 		setTitle("Slew Units");
 		
-		setBounds(100, 100, 230, 261);
+		setBounds(100, 100, 340, 261);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -159,6 +159,18 @@ public class EditUnitSlewGUI extends JDialog implements ActionListener, FocusLis
 		textFieldTripTime.addFocusListener(this);
 		contentPanel.add(textFieldTripTime);
 		textFieldTripTime.setColumns(10);
+		
+		JLabel lblSeconds = new JLabel("seconds / 100");
+		lblSeconds.setBounds(214, 159, 109, 14);
+		contentPanel.add(lblSeconds);
+		
+		JLabel lblDegrees = new JLabel("degrees");
+		lblDegrees.setBounds(214, 59, 82, 14);
+		contentPanel.add(lblDegrees);
+		
+		JLabel label_1 = new JLabel("degrees");
+		label_1.setBounds(214, 84, 82, 14);
+		contentPanel.add(label_1);
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));

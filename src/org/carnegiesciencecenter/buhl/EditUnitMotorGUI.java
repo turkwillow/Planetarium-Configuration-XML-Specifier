@@ -29,6 +29,10 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 						textFieldMinPos, textFieldMaxPos;
 	private UnitMotor toBeEdited;
 	private String toBeEditedName;	// The original name of the unit to be edited
+	private JLabel lblDegrees;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
 
 	/**
 	 * Launch the application.
@@ -90,7 +94,7 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 		parentWindow = parent;
 		
 		setTitle("Motor Units");
-		setBounds(100, 100, 246, 300);
+		setBounds(100, 100, 300, 300);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
@@ -186,6 +190,26 @@ public class EditUnitMotorGUI extends JDialog implements ActionListener, FocusLi
 			textFieldMaxPos.setBounds(151, 184, 63, 20);
 			textFieldMaxPos.addFocusListener(this);
 			contentPanel.add(textFieldMaxPos);
+		}
+		{
+			lblDegrees = new JLabel("degrees");
+			lblDegrees.setBounds(224, 59, 60, 14);
+			contentPanel.add(lblDegrees);
+		}
+		{
+			label_1 = new JLabel("degrees");
+			label_1.setBounds(224, 84, 60, 14);
+			contentPanel.add(label_1);
+		}
+		{
+			label_2 = new JLabel("degrees");
+			label_2.setBounds(224, 109, 60, 14);
+			contentPanel.add(label_2);
+		}
+		{
+			label_3 = new JLabel("degrees");
+			label_3.setBounds(224, 134, 60, 14);
+			contentPanel.add(label_3);
 		}
 		{
 			JPanel buttonPane = new JPanel();

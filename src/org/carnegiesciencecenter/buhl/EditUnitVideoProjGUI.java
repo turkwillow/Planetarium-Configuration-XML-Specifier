@@ -88,7 +88,7 @@ public class EditUnitVideoProjGUI extends JDialog implements ActionListener, Foc
 		parentWindow = parent;
 		setTitle("Video Projector Units");
 		
-		setBounds(100, 100, 270, 286);
+		setBounds(100, 100, 275, 286);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
