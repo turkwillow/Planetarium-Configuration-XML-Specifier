@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<planetarium>
+  <bank name="AMIX" devicetype="Other" action="keepmost" />
+  <bank name="ANIM" devicetype="Slide Projector" action="convertmost">
+    <unit name="A" devicetype="Slide Projector" azimuth="-28.0" elevation="11.5" rotation="0.0" width="33.0" height="23.0" />
+    <unit name="B" devicetype="Slide Projector" azimuth="-27.0" elevation="48.0" rotation="3.0" width="33.0" height="23.0" />
+    <unit name="C" devicetype="Slide Projector" azimuth="0.0" elevation="16.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="D" devicetype="Slide Projector" azimuth="0.0" elevation="39.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="E" devicetype="Slide Projector" azimuth="0.0" elevation="16.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="F" devicetype="Slide Projector" azimuth="0.0" elevation="39.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="G" devicetype="Slide Projector" azimuth="36.0" elevation="13.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="I" devicetype="Slide Projector" azimuth="-30.0" elevation="42.0" rotation="7.0" width="35.0" height="26.0" />
+    <unit name="J" devicetype="Slide Projector" azimuth="-30.0" elevation="42.0" rotation="7.0" width="35.0" height="26.0" />
+    <unit name="K" devicetype="Slide Projector" azimuth="29.0" elevation="39.0" rotation="-5.0" width="39.0" height="26.0" />
+    <unit name="M" devicetype="Slide Projector" azimuth="-40.0" elevation="56.0" rotation="0.0" width="35.0" height="26.0" />
+    <unit name="N" devicetype="Slide Projector" azimuth="-40.0" elevation="56.0" rotation="0.0" width="35.0" height="26.0" />
+    <unit name="O" devicetype="Slide Projector" azimuth="0.0" elevation="68.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="P" devicetype="Slide Projector" azimuth="0.0" elevation="68.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="Q" devicetype="Slide Projector" azimuth="47.0" elevation="56.0" rotation="-2.0" width="35.0" height="26.0" />
+    <unit name="R" devicetype="Slide Projector" azimuth="47.0" elevation="56.0" rotation="-2.0" width="35.0" height="26.0" />
+  </bank>
+  <bank name="ASKY" devicetype="Slide Projector" action="convertmost">
+    <unit name="A" devicetype="Slide Projector" azimuth="0.0" elevation="300.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="B" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="C" devicetype="Slide Projector" azimuth="0.0" elevation="60.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="D" devicetype="Slide Projector" azimuth="0.0" elevation="120.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="E" devicetype="Slide Projector" azimuth="0.0" elevation="180.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="F" devicetype="Slide Projector" azimuth="0.0" elevation="240.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="G" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+  </bank>
+  <bank name="DMX" devicetype="Other" action="keepmost" />
+  <bank name="DSKY" devicetype="Other" action="keepmost" />
+  <bank name="INTER" devicetype="Interactive" action="convertmost" />
+  <bank name="LAMP" devicetype="Other" action="keepmost" />
+  <bank name="MISC" devicetype="Other" action="discardmost" />
+  <bank name="MOTR" devicetype="Motor" action="convertmost">
+    <unit name="A" devicetype="Motor" minwidth="1.0" maxwidth="50.0" minheight="1.0" maxheight="70.0" minpos="0.0" maxpos="100.0" />
+    <unit name="B" devicetype="Motor" minwidth="1.0" maxwidth="30.0" minheight="1.0" maxheight="90.0" minpos="0.0" maxpos="100.0" />
+  </bank>
+  <bank name="PANS" devicetype="Slide Projector" action="convertmost">
+    <unit name="A" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="B" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="C" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="D" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="E" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="F" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="G" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="H" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="I" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="J" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="K" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="L" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="M" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+    <unit name="N" devicetype="Slide Projector" azimuth="0.0" elevation="0.0" rotation="45.0" width="60.0" height="90.0" />
+  </bank>
+  <bank name="PROJ" devicetype="Slide Projector" action="convertmost">
+    <unit name="A" devicetype="Slide Projector" azimuth="-28.0" elevation="11.5" rotation="0.0" width="33.0" height="23.0" />
+    <unit name="B" devicetype="Slide Projector" azimuth="-27.0" elevation="48.0" rotation="3.0" width="33.0" height="23.0" />
+  </bank>
+  <bank name="RELY" devicetype="Other" action="keepmost" />
+  <bank name="SLEW" devicetype="Slew" action="convertmost">
+    <unit name="A" devicetype="Slew" minpos="0.0" maxpos="4095.0" minval="-120.0" maxval="120.0" triptime="1000.0" />
+    <unit name="B" devicetype="Slew" minpos="0.0" maxpos="4095.0" minval="0.0" maxval="90.0" triptime="500.0" />
+    <unit name="C" devicetype="Slew" minpos="0.0" maxpos="4095.0" minval="-120.0" maxval="120.0" triptime="1000.0" />
+    <unit name="D" devicetype="Slew" minpos="0.0" maxpos="4095.0" minval="0.0" maxval="90.0" triptime="500.0" />
+  </bank>
+  <bank name="SONY" devicetype="Other" action="keepmost" />
+  <bank name="SPFX" devicetype="Other" action="keepmost" />
+  <bank name="SRC2" devicetype="Other" action="keepmost" />
+  <bank name="VOLM" devicetype="Other" action="keepmost" />
+  <bank name="VPRJ" devicetype="Video Projector" action="convertmost">
+    <unit name="A" devicetype="Video Projector" azimuth="-57.0" elevation="36.0" rotation="0.0" width="34.0" height="25.0" />
+    <unit name="B" devicetype="Video Projector" azimuth="0.0" elevation="36.0" rotation="0.0" width="34.0" height="25.0" />
+    <unit name="C" devicetype="Video Projector" azimuth="57.0" elevation="36.0" rotation="0.0" width="34.0" height="25.0" />
+    <unit name="D" devicetype="Video Projector" azimuth="0.0" elevation="69.0" rotation="0.0" width="34.0" height="25.0" />
+    <unit name="E" devicetype="Video Projector" azimuth="0.0" elevation="16.0" rotation="0.0" width="39.0" height="26.0" />
+    <unit name="F" devicetype="Video Projector" azimuth="0.0" elevation="39.0" rotation="0.0" width="39.0" height="26.0" />
+  </bank>
+  <bank name="VSRC" devicetype="Other" action="convertmost" />
+</planetarium>
