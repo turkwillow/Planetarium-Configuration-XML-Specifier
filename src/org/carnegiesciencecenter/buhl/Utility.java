@@ -1,5 +1,8 @@
 package org.carnegiesciencecenter.buhl;
 
+/**
+ * A collection of general-purpose utility functions.
+ */
 public class Utility 
 {
 	/**

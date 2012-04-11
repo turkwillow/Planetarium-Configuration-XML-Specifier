@@ -9,12 +9,12 @@ public class UnitMotor extends Unit
 	private double minPosition, maxPosition;
 	// For referring to things in XML:
 	public static final String MOTOR = "Motor";
-	public static final String MIN_WIDTH	= "minwidth";
-	public static final String MAX_WIDTH	= "maxwidth";
-	public static final String MIN_HEIGHT	= "minheight";
-	public static final String MAX_HEIGHT	= "maxheight";
-	public static final String MIN_POS		= "minpos";
-	public static final String MAX_POS		= "maxpos";
+	public static final String MIN_WIDTH_ATTR	= "minwidth";
+	public static final String MAX_WIDTH_ATTR	= "maxwidth";
+	public static final String MIN_HEIGHT_ATTR	= "minheight";
+	public static final String MAX_HEIGHT_ATTR	= "maxheight";
+	public static final String MIN_POS_ATTR		= "minpos";
+	public static final String MAX_POS_ATTR		= "maxpos";
 	
 	/**
 	 * Public constructor taking the motor's name as a String and 
@@ -136,12 +136,12 @@ public class UnitMotor extends Unit
 	{
 		Element unitElement = super.getXML();
 		
-		unitElement.setAttribute(MIN_WIDTH, String.valueOf(minWidth));
-		unitElement.setAttribute(MAX_WIDTH, String.valueOf(maxWidth));
-		unitElement.setAttribute(MIN_HEIGHT, String.valueOf(minHeight));
-		unitElement.setAttribute(MAX_HEIGHT, String.valueOf(maxHeight));
-		unitElement.setAttribute(MIN_POS, String.valueOf(minPosition));
-		unitElement.setAttribute(MAX_POS, String.valueOf(maxPosition));
+		unitElement.setAttribute(MIN_WIDTH_ATTR, String.valueOf(minWidth));
+		unitElement.setAttribute(MAX_WIDTH_ATTR, String.valueOf(maxWidth));
+		unitElement.setAttribute(MIN_HEIGHT_ATTR, String.valueOf(minHeight));
+		unitElement.setAttribute(MAX_HEIGHT_ATTR, String.valueOf(maxHeight));
+		unitElement.setAttribute(MIN_POS_ATTR, String.valueOf(minPosition));
+		unitElement.setAttribute(MAX_POS_ATTR, String.valueOf(maxPosition));
 		
 		return unitElement;
 	}

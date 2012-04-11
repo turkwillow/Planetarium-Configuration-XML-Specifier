@@ -16,13 +16,13 @@ public class Bank implements Comparable
 	private HashMap<String, SpiceCommand> spiceCommands;	// Spice Commands, indexed by name
 	private HashMap<String, Unit> units;	// Units with projection location information, indexed by name
 	// Names and values used to describe XML attributes or tags
+	public static final String ACTION_ATTR = "action";
+	public static final String COMMAND_ATTR = "command";
+	public static final String DEVICE_TYPE_ATTR = "devicetype";
+	public static final String NAME_ATTR = "name";
 	public static final String KEEPING_MOST	= "keepmost";
 	public static final String DISCARD_MOST = "discardmost";
 	public static final String CONVERT_MOST = "convertmost";
-	public static final String ACTION = "action";
-	public static final String COMMAND = "command";
-	public static final String DEVICE_TYPE = "devicetype";
-	public static final String NAME = "name";
 	public static final String KEEP 	= "keep";
 	public static final String DISCARD 	= "discard";
 	public static final String CONVERT 	= "convert";
@@ -58,19 +58,19 @@ public class Bank implements Comparable
 	public Element getXML()
 	{
 		Element bankElement = new Element("bank");	// The root of the bank definition
-		bankElement.setAttribute(NAME, bankName);
-		bankElement.setAttribute(DEVICE_TYPE, deviceType);
+		bankElement.setAttribute(NAME_ATTR, bankName);
+		bankElement.setAttribute(DEVICE_TYPE_ATTR, deviceType);
 		
 		switch (defaultAction)
 		{
 		case KEEP:
-			bankElement.setAttribute(ACTION, KEEPING_MOST);
+			bankElement.setAttribute(ACTION_ATTR, KEEPING_MOST);
 			break;
 		case DISCARD:
-			bankElement.setAttribute(ACTION, DISCARD_MOST);
+			bankElement.setAttribute(ACTION_ATTR, DISCARD_MOST);
 			break;
 		case CONVERT_TO_DS:
-			bankElement.setAttribute(ACTION, CONVERT_MOST);
+			bankElement.setAttribute(ACTION_ATTR, CONVERT_MOST);
 			break;
 		}
 		
@@ -79,20 +79,20 @@ public class Bank implements Comparable
 		for (SpiceCommand cmd : commands)
 		{
 			Element command = new Element("command");
-			command.setAttribute(NAME, cmd.getName());
+			command.setAttribute(NAME_ATTR, cmd.getName());
 			switch (cmd.getAction())
 			{
 			case KEEP:
-				command.setAttribute(ACTION, KEEP);
+				command.setAttribute(ACTION_ATTR, KEEP);
 				break;
 			case DISCARD:
-				command.setAttribute(ACTION, DISCARD);
+				command.setAttribute(ACTION_ATTR, DISCARD);
 				break;
 			case CONVERT_TO_DS:
-				command.setAttribute(ACTION, CONVERT);
+				command.setAttribute(ACTION_ATTR, CONVERT);
 				break;
 			default:
-				command.setAttribute(ACTION, KEEP);	// If all else fails, don't throw stuff out
+				command.setAttribute(ACTION_ATTR, KEEP);	// If all else fails, don't throw stuff out
 				break;
 			}
 			

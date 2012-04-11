@@ -9,11 +9,11 @@ public class UnitSlew extends Unit
 					tripTime;
 	// Used to refer to XML elements:
 	public static final String SLEW = "Slew";
-	public static final String MIN_POS = "minpos";
-	public static final String MAX_POS = "maxpos";
-	public static final String MIN_VAL = "minval";
-	public static final String MAX_VAL = "maxval";
-	public static final String TRIP_TIME = "triptime";
+	public static final String MIN_POS_ATTR = "minpos";
+	public static final String MAX_POS_ATTR = "maxpos";
+	public static final String MIN_VAL_ATTR = "minval";
+	public static final String MAX_VAL_ATTR = "maxval";
+	public static final String TRIP_TIME_ATTR = "triptime";
 	
 	/**
 	 * Public constructor taking the name of the slew (e.g., "SLEW") as a String
@@ -115,11 +115,11 @@ public class UnitSlew extends Unit
 	{
 		Element unitElement = super.getXML();
 		
-		unitElement.setAttribute(MIN_POS, String.valueOf(minPosition));
-		unitElement.setAttribute(MAX_POS, String.valueOf(maxPosition));
-		unitElement.setAttribute(MIN_VAL, String.valueOf(minValue));
-		unitElement.setAttribute(MAX_VAL, String.valueOf(maxValue));
-		unitElement.setAttribute(TRIP_TIME, String.valueOf(tripTime));
+		unitElement.setAttribute(MIN_POS_ATTR, String.valueOf(minPosition));
+		unitElement.setAttribute(MAX_POS_ATTR, String.valueOf(maxPosition));
+		unitElement.setAttribute(MIN_VAL_ATTR, String.valueOf(minValue));
+		unitElement.setAttribute(MAX_VAL_ATTR, String.valueOf(maxValue));
+		unitElement.setAttribute(TRIP_TIME_ATTR, String.valueOf(tripTime));
 		
 		return unitElement;
 	}

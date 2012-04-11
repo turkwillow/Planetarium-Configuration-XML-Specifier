@@ -6,11 +6,11 @@ public class UnitProjector extends Unit
 {
 	private double azimuth, elevation, rotation, width, height;
 	// Used to refer to XML elements:
-	public static final String AZIMUTH 		= "azimuth";
-	public static final String ELEVATION	= "elevation";
-	public static final String ROTATION 	= "rotation";
-	public static final String WIDTH 		= "width";
-	public static final String HEIGHT 		= "height";
+	public static final String AZIMUTH_ATTR 	= "azimuth";
+	public static final String ELEVATION_ATTR	= "elevation";
+	public static final String ROTATION_ATTR 	= "rotation";
+	public static final String WIDTH_ATTR 		= "width";
+	public static final String HEIGHT_ATTR 		= "height";
 	
 	/**
 	 * Constructor taking the name and type of projector as Strings
@@ -112,11 +112,11 @@ public class UnitProjector extends Unit
 	{
 		Element unitElement = super.getXML();
 		
-		unitElement.setAttribute(AZIMUTH, String.valueOf(azimuth));
-		unitElement.setAttribute(ELEVATION, String.valueOf(elevation));
-		unitElement.setAttribute(ROTATION, String.valueOf(rotation));
-		unitElement.setAttribute(WIDTH, String.valueOf(width));
-		unitElement.setAttribute(HEIGHT, String.valueOf(height));
+		unitElement.setAttribute(AZIMUTH_ATTR, String.valueOf(azimuth));
+		unitElement.setAttribute(ELEVATION_ATTR, String.valueOf(elevation));
+		unitElement.setAttribute(ROTATION_ATTR, String.valueOf(rotation));
+		unitElement.setAttribute(WIDTH_ATTR, String.valueOf(width));
+		unitElement.setAttribute(HEIGHT_ATTR, String.valueOf(height));
 		
 		return unitElement;
 	}

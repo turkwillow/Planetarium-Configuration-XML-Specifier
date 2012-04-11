@@ -377,7 +377,7 @@ public class EditConfigMainGUI implements ActionListener
 			{
 				// Read Bank
 				Element elem = (Element) iter.next();
-				String sAction = elem.getAttributeValue(Bank.ACTION);
+				String sAction = elem.getAttributeValue(Bank.ACTION_ATTR);
 				Bank.CommandAction cmdAction;
 				if (sAction.equals(Bank.KEEPING_MOST))
 					cmdAction = Bank.CommandAction.KEEP;
@@ -386,8 +386,8 @@ public class EditConfigMainGUI implements ActionListener
 				else	// sAction.equals(Bank.CONVERT_MOST)
 					cmdAction = Bank.CommandAction.CONVERT_TO_DS;
 				
-				String deviceType = elem.getAttributeValue(Bank.DEVICE_TYPE);
-				Bank bank = new Bank(elem.getAttributeValue(Bank.NAME), deviceType, cmdAction);
+				String deviceType = elem.getAttributeValue(Bank.DEVICE_TYPE_ATTR);
+				Bank bank = new Bank(elem.getAttributeValue(Bank.NAME_ATTR), deviceType, cmdAction);
 				// Read any special-case commands or units
 				List commands = elem.getChildren();
 				Iterator cIter = commands.iterator();
@@ -399,7 +399,7 @@ public class EditConfigMainGUI implements ActionListener
 					if (elementType.equals("command"))
 					{
 						Bank.CommandAction ca = null;
-						String actionName = cElem.getAttributeValue(Bank.ACTION);
+						String actionName = cElem.getAttributeValue(Bank.ACTION_ATTR);
 						if (actionName.equals(Bank.DISCARD))
 							ca = Bank.CommandAction.DISCARD;
 						else if (actionName.equals(Bank.CONVERT))
@@ -407,54 +407,54 @@ public class EditConfigMainGUI implements ActionListener
 						else	// Keep
 							ca = Bank.CommandAction.KEEP;
 						// Add the new action to the bank
-						bank.setCommand(cElem.getAttributeValue(Bank.NAME), ca);
+						bank.setCommand(cElem.getAttributeValue(Bank.NAME_ATTR), ca);
 					}
 					else if (elementType.equals("unit"))
 					{
 						Unit unit;
-						String unitName = cElem.getAttributeValue(Unit.NAME);
+						String unitName = cElem.getAttributeValue(Unit.NAME_ATTR);
 						
 						if (deviceType.equals(UnitMotor.MOTOR))
 						{
 							unit = new UnitMotor(
 									unitName,
-									cElem.getAttributeValue(UnitMotor.MIN_WIDTH),
-									cElem.getAttributeValue(UnitMotor.MAX_WIDTH),
-									cElem.getAttributeValue(UnitMotor.MIN_HEIGHT),
-									cElem.getAttributeValue(UnitMotor.MAX_HEIGHT),
-									cElem.getAttributeValue(UnitMotor.MIN_POS),
-									cElem.getAttributeValue(UnitMotor.MAX_POS));
+									cElem.getAttributeValue(UnitMotor.MIN_WIDTH_ATTR),
+									cElem.getAttributeValue(UnitMotor.MAX_WIDTH_ATTR),
+									cElem.getAttributeValue(UnitMotor.MIN_HEIGHT_ATTR),
+									cElem.getAttributeValue(UnitMotor.MAX_HEIGHT_ATTR),
+									cElem.getAttributeValue(UnitMotor.MIN_POS_ATTR),
+									cElem.getAttributeValue(UnitMotor.MAX_POS_ATTR));
 						}
 						else if (deviceType.equals(UnitSlew.SLEW))
 						{
 							// String name, double MinPos, double MaxPos, double MinValue, double MaxValue
 							unit = new UnitSlew(
 									unitName,
-									cElem.getAttributeValue(UnitSlew.MIN_POS),
-									cElem.getAttributeValue(UnitSlew.MAX_POS),
-									cElem.getAttributeValue(UnitSlew.MIN_VAL),
-									cElem.getAttributeValue(UnitSlew.MAX_VAL),
-									cElem.getAttributeValue(UnitSlew.TRIP_TIME));
+									cElem.getAttributeValue(UnitSlew.MIN_POS_ATTR),
+									cElem.getAttributeValue(UnitSlew.MAX_POS_ATTR),
+									cElem.getAttributeValue(UnitSlew.MIN_VAL_ATTR),
+									cElem.getAttributeValue(UnitSlew.MAX_VAL_ATTR),
+									cElem.getAttributeValue(UnitSlew.TRIP_TIME_ATTR));
 						}
 						else if (deviceType.equals(UnitSlideProjector.SLIDE_PROJ))
 						{
 							unit = new UnitSlideProjector(
 									unitName,
-									cElem.getAttributeValue(UnitSlideProjector.AZIMUTH),
-									cElem.getAttributeValue(UnitSlideProjector.ELEVATION),
-									cElem.getAttributeValue(UnitSlideProjector.ROTATION),
-									cElem.getAttributeValue(UnitSlideProjector.WIDTH),
-									cElem.getAttributeValue(UnitSlideProjector.HEIGHT));
+									cElem.getAttributeValue(UnitSlideProjector.AZIMUTH_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.ELEVATION_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.ROTATION_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.WIDTH_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.HEIGHT_ATTR));
 						}
 						else if (deviceType.equals(UnitVideoProjector.VIDEO_PROJ))
 						{
 							unit = new UnitVideoProjector(
 									unitName,
-									cElem.getAttributeValue(UnitSlideProjector.AZIMUTH),
-									cElem.getAttributeValue(UnitSlideProjector.ELEVATION),
-									cElem.getAttributeValue(UnitSlideProjector.ROTATION),
-									cElem.getAttributeValue(UnitSlideProjector.WIDTH),
-									cElem.getAttributeValue(UnitSlideProjector.HEIGHT));
+									cElem.getAttributeValue(UnitSlideProjector.AZIMUTH_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.ELEVATION_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.ROTATION_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.WIDTH_ATTR),
+									cElem.getAttributeValue(UnitSlideProjector.HEIGHT_ATTR));
 						}
 						else
 							unit = new Unit(unitName, deviceType);

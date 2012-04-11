@@ -7,7 +7,7 @@ public class Unit implements Comparable
 	protected String name;	// The name of the Unit (e.g., "E")
 	protected String deviceType;	// The type of device (e.g., "Video Projector")
 	// For referring to things in XML:
-	public static final String NAME = "name";
+	public static final String NAME_ATTR = "name";
 	public static final String OTHER = "Other";
 	
 	/**
@@ -59,8 +59,8 @@ public class Unit implements Comparable
 	public Element getXML()
 	{
 		Element unitElement = new Element("unit");	// The root of the bank definition
-		unitElement.setAttribute(NAME, name);
-		unitElement.setAttribute(Bank.DEVICE_TYPE, deviceType);
+		unitElement.setAttribute(NAME_ATTR, name);
+		unitElement.setAttribute(Bank.DEVICE_TYPE_ATTR, deviceType);
 		
 		return unitElement;
 	}
