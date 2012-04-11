@@ -1,6 +1,7 @@
 package org.carnegiesciencecenter.buhl;
 
 import org.carnegiesciencecenter.buhl.Bank.CommandAction;
+import org.jdom.Element;
 
 /**
  * Lightweight class for keeping track of commands
@@ -41,5 +42,33 @@ public class SpiceCommand
 	public void setAction(CommandAction cmdAction)
 	{
 		action = cmdAction;
+	}
+
+	/**
+	 * Gets the JDOM XML Element that represents this Unit.
+	 * @return	The JDOM XML Element that describes this Unit
+	 */
+	public Element getXML()
+	{
+		Element element = new Element("command");
+		
+		element.setAttribute(Bank.NAME_ATTR, name);
+		switch (action)
+		{
+		case KEEP:
+			element.setAttribute(Bank.ACTION_ATTR, Bank.KEEP);
+			break;
+		case DISCARD:
+			element.setAttribute(Bank.ACTION_ATTR, Bank.DISCARD);
+			break;
+		case CONVERT_TO_DS:
+			element.setAttribute(Bank.ACTION_ATTR, Bank.CONVERT);
+			break;
+		default:
+			element.setAttribute(Bank.ACTION_ATTR, Bank.KEEP);	// If all else fails, don't throw stuff out
+			break;
+		}
+		
+		return element;
 	}
 }

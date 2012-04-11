@@ -76,28 +76,8 @@ public class Bank implements Comparable
 		
 		// Spice command information
 		SpiceCommand[] commands = Arrays.copyOf(spiceCommands.values().toArray(), spiceCommands.size(), SpiceCommand[].class);
-		for (SpiceCommand cmd : commands)
-		{
-			Element command = new Element("command");
-			command.setAttribute(NAME_ATTR, cmd.getName());
-			switch (cmd.getAction())
-			{
-			case KEEP:
-				command.setAttribute(ACTION_ATTR, KEEP);
-				break;
-			case DISCARD:
-				command.setAttribute(ACTION_ATTR, DISCARD);
-				break;
-			case CONVERT_TO_DS:
-				command.setAttribute(ACTION_ATTR, CONVERT);
-				break;
-			default:
-				command.setAttribute(ACTION_ATTR, KEEP);	// If all else fails, don't throw stuff out
-				break;
-			}
-			
-			bankElement.addContent(command);	// Add the command
-		}
+		for (SpiceCommand cmd : commands)	
+			bankElement.addContent(cmd.getXML());	// Add the command
 		
 		// Unit information
 		Unit[] unts = Arrays.copyOf(units.values().toArray(), units.size(), Unit[].class);
